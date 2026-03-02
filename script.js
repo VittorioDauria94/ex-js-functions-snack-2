@@ -18,11 +18,17 @@
 // Snack 2 - Crea una arrow function che calcola il quadrato di un numero.
 // Definisci una funzione chiamata quadrato che accetta un numero e restituisce il suo quadrato in una sola riga.
 
-const quadrato = (num) => num * num;
-
+// const quadrato = (num) => num * num;
 
 // Snack 3 - Crea una funzione eseguiOperazione
 // Definisci una funzione eseguiOperazione che accetta tre parametri: due numeri e una funzione operatore (callback). La funzione deve eseguire l'operazione fornita sui due numeri.
+
+const somma = (a, b) => a + b;
+const moltiplica = (a, b) => a * b;
+const dividi = (a, b) => a / b;
+const sottrai = (a, b) => a - b;
+
+const eseguiOperazione = (a, b, callback) => callback(a, b);
 
 // Snack 4 - Crea un generatore di funzioni creaTimer
 // Scrivi una funzione creaTimer che accetta un tempo (in ms) e restituisce una nuova funzione che avvia un setTimeout per stampare "Tempo scaduto!".
