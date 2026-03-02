@@ -33,10 +33,18 @@
 // Snack 4 - Crea un generatore di funzioni creaTimer
 // Scrivi una funzione creaTimer che accetta un tempo (in ms) e restituisce una nuova funzione che avvia un setTimeout per stampare "Tempo scaduto!".
 
-const creaTimer = (ms) => () => setTimeout(() => console.log("Tempo scaduto"), ms);
+// const creaTimer = (ms) => () => setTimeout(() => console.log("Tempo scaduto"), ms);
 
 // Snack 5 - Crea una funzione stampaOgniSecondo con setInterval.
 // Definisci una funzione che accetta un messaggio e lo stampa ogni secondo.
+
+const stampaOgniSecondo = (message) =>
+  setInterval(() => console.log(message), 1000);
+
+//fermo il lop dopo 5 secondi
+
+const id = stampaOgniSecondo("Ciao!");
+setTimeout(() => clearInterval(id), 5000);
 
 // Nota: Questa funzione creerà un loop infinito. Interrompilo manualmente o usa clearInterval() in un altro script.
 
