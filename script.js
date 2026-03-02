@@ -37,19 +37,34 @@
 
 // Snack 5 - Crea una funzione stampaOgniSecondo con setInterval.
 // Definisci una funzione che accetta un messaggio e lo stampa ogni secondo.
-
-const stampaOgniSecondo = (message) =>
-  setInterval(() => console.log(message), 1000);
-
-//fermo il lop dopo 5 secondi
-
-const id = stampaOgniSecondo("Ciao!");
-setTimeout(() => clearInterval(id), 5000);
-
 // Nota: Questa funzione creerà un loop infinito. Interrompilo manualmente o usa clearInterval() in un altro script.
+
+// const stampaOgniSecondo = (message) =>
+//   setInterval(() => console.log(message), 1000);
+
+// //fermo il lop dopo 5 secondi
+
+// const id = stampaOgniSecondo("Ciao!");
+// setTimeout(() => clearInterval(id), 5000);
 
 // Snack 6 - Crea un contatore automatico con setInterval
 // Definisci una funzione creaContatoreAutomatico che accetta un intervallo di tempo e restituisce una funzione che avvia un setInterval, incrementando un contatore e stampandolo.
+
+function creaContatoreAutomatico(ms) {
+  let contatore = 0;
+  return () =>
+    setInterval(() => {
+      contatore++;
+      console.log(contatore);
+    }, ms);
+}
+
+//fermo il lop dopo 5 secondi
+
+const avvia = creaContatoreAutomatico(50);
+const id = avvia();
+
+setTimeout(() => clearInterval(id), 5000);
 
 // Snack 7 - Crea una funzione che ferma un timer dopo un certo tempo
 // Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop.
