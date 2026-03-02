@@ -23,15 +23,17 @@
 // Snack 3 - Crea una funzione eseguiOperazione
 // Definisci una funzione eseguiOperazione che accetta tre parametri: due numeri e una funzione operatore (callback). La funzione deve eseguire l'operazione fornita sui due numeri.
 
-const somma = (a, b) => a + b;
-const moltiplica = (a, b) => a * b;
-const dividi = (a, b) => a / b;
-const sottrai = (a, b) => a - b;
+// const somma = (a, b) => a + b;
+// const moltiplica = (a, b) => a * b;
+// const dividi = (a, b) => a / b;
+// const sottrai = (a, b) => a - b;
 
-const eseguiOperazione = (a, b, callback) => callback(a, b);
+// const eseguiOperazione = (a, b, callback) => callback(a, b);
 
 // Snack 4 - Crea un generatore di funzioni creaTimer
 // Scrivi una funzione creaTimer che accetta un tempo (in ms) e restituisce una nuova funzione che avvia un setTimeout per stampare "Tempo scaduto!".
+
+const creaTimer = (ms) => () => setTimeout(() => console.log("Tempo scaduto"), ms);
 
 // Snack 5 - Crea una funzione stampaOgniSecondo con setInterval.
 // Definisci una funzione che accetta un messaggio e lo stampa ogni secondo.
