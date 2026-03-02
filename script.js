@@ -105,21 +105,32 @@
 
 // Ogni operazione deve essere eseguita in sequenza con un ritardo uguale al tempo di intervallo.
 
-function sequenzaOperazioni(operazioni, intervallo) {
-  let i = 0;
-  function avanti() {
-    if (i >= operazioni.length) return;
+// function sequenzaOperazioni(operazioni, intervallo) {
+//   let i = 0;
+//   function avanti() {
+//     if (i >= operazioni.length) return;
 
-    operazioni[i]();
-    i++;
+//     operazioni[i]();
+//     i++;
 
-    setTimeout(avanti, intervallo);
-  }
+//     setTimeout(avanti, intervallo);
+//   }
 
-  avanti(); // se volessi che anche la prima funzione parta dopo intervallo alloro metto setTimeout(avanti, intervallo);
-}
+//   avanti(); // se volessi che anche la prima funzione parta dopo intervallo alloro metto setTimeout(avanti, intervallo);
+// }
 
 // Snack 10 (Bonus) - Creare un throttler per limitare l’esecuzione di una funzione
 // Scrivi una funzione creaThrottler che accetta una funzione e un tempo `limite`.
 
 // Restituisce una nuova funzione che, quando chiamata ripetutamente, esegue l'operazione originale al massimo una volta ogni n millisecondi.
+
+function creaThrottler(callback, limite) {
+  let ultimaChiamata = 0;
+  return function (...args) {
+    const adesso = Date.now();
+    if (adesso - ultimaChiamata >= limite) {
+      ultimaChiamata = adesso;
+      callback(...args);
+    }
+  };
+}
